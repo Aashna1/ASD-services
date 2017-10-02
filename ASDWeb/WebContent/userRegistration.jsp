@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome to ASD Services
-<br>
-<img src="images/electric_repair.jpg"></img>
+
 </body>
 </html>

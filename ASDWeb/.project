@@ -3,6 +3,7 @@
 	<name>ASDWeb</name>
 	<comment></comment>
 	<projects>
+		<project>ASDCommon</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
