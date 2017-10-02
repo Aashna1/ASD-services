@@ -39,8 +39,8 @@ public class authServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Got Request");
-		String username  = "";
-		String pwd = "";
+		String username  = (String) request.getParameter("username");
+		String pwd = (String) request.getParameter("pwd");
 		if(objAuthService.isValidUser(username, pwd))
 		{
 			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");

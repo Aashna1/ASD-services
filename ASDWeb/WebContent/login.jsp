@@ -35,10 +35,10 @@ if(loginStatus != null && loginStatus.equalsIgnoreCase(("invalid")))
 
 %>
 <tr>
-	<td>Username</td><td><input type="text"/></td>
+	<td>Username</td><td><input type="text" id="username" name="username"/></td>
 </tr>
 <tr>
-	<td>Password</td><td><input type="password"/></td>
+	<td>Password</td><td><input type="password" id="pwd" name="pwd"/></td>
 </tr>
 <tr>
 	<td></td><td><input type="button" onClick="doSubmit()" value="Login"/><input type="reset"/></td>
