@@ -294,6 +294,17 @@ var y=document.forms["registration"]["conpasswrd"];
 <tr>
 <td>Confirm Password:</td><td><input type="password" id="conpasswrd" name="conpasswrd" placeholder="Confirm Password"><span style="color:Red">*</span><i style="color:red;" id="pointpass1"></i></td>
 </tr>
+<tr>
+<td>User Type:</td>
+	<td>
+		<select id="selectUserType" name="selectUserType">
+		<option value="C">Customer</option>
+		<option value="A">Admin</option>		
+		<option value="E">Engineer</option>
+		</select>
+		<span style="color:Red">*</span><i style="color:red;" id="pointpass1"></i>
+	</td>
+</tr>
 </table>
 
 <center><input type="submit"  value="Register" onclick="return validateForm();"><br><br> 

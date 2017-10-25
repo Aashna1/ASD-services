@@ -29,6 +29,10 @@ if($d > 0)
 	{
 		header('Location:myTask.php');
 	}
+	elseif($sql1['USER_TYPE'] == 'A')
+	{
+		header('Location:admin_dashboard.php');
+	}
 	else
 	{
 		header('Location:index.php');

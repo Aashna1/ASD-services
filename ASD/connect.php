@@ -1,9 +1,10 @@
 
 <?php
-$user='root';
-$password='';
-$db='sts';
-$con=new mysqli('localhost',$user,$password,$db);
+$servername = "localhost";
+$username = "root";
+$password = "admin";
+$dbname = "asddb";
+$con = new mysqli($servername, $username, $password, $dbname);
 
 
 $firstname=$_POST['firstname'];
@@ -11,6 +12,7 @@ $lastname=$_POST['lastname'];
 $Email=$_POST['Email'];
 $mobileno=$_POST['mobileno'];
 $password=$_POST['password'];
+$userType=$_POST['selectUserType'];
 
 // $sql = 'select count(*) from registration where mobileno = '.$mobileno.' and password="'.$password.'"';
 
@@ -28,9 +30,12 @@ exit;
 else
 {
 
-	 $sql="insert into registration(firstname,lastname,Email,mobileno,password) values ('$firstname','$lastname','$Email','$mobileno','$password')";
+	 $sql="insert into registration(firstname,lastname,Email,mobileno,password,user_type) values ('$firstname','$lastname','$Email','$mobileno','$password','$userType')";
 $query=mysqli_query($con,$sql);
-echo "<script>window.location.replace('login.html?showmsg=1')</script>";
+
+//header('Location: index.php');
+
+echo "<script>window.location.replace('index.php')</script>";
 }
 
 
