@@ -7,8 +7,21 @@
 </head>
 <body>
 
+<script language="JavaScript">
 
+function doSubmit(assignmentNo,orderNo)
+{
+	document.getElementById("assignmentNo").value = assignmentNo;
+	document.getElementById("orderNo").value = orderNo;
+	document.myForm.submit();
+}
 
+</script>
+
+<form name="myForm" action="completeTask.php" method="post">
+
+<input type="hidden" id="assignmentNo" name="assignmentNo" />
+<input type="hidden" id="orderNo" name="orderNo" />
 <h2>My Task</h2>
 
 <?php
@@ -38,7 +51,8 @@ FROM ORDER_ASSIGNMENT OA, MST_SERVICE_CODE S,MST_TIMESLOTS T,REGISTRATION R
 WHERE OA.SERVICE_CODE = S.SERVICE_CODE AND
 OA.SLOT_CODE = T.SLOT_CODE AND
 OA.MOBILENO = R.MOBILENO AND
-OA.MOBILENO = ".$userMobile."
+OA.MOBILENO = ".$userMobile." AND
+OA.STATUS = 'ASSIGNED'
 ORDER BY ASSIGNMENT_NO";
 
 $result = $conn->query($sql);
@@ -71,7 +85,7 @@ if ($result->num_rows > 0) {
 				echo("<td>".$row['ASSIGNMENT_DATE']."</td>");
 				echo("<td>".$row['FIRSTNAME']."</td>");
 
-				echo("<td><input type=submit value='Mark as Done'></input></td>");
+				echo("<td><input type=button value='Mark as Done' onClick=doSubmit('".$row['ASSIGNMENT_NO']."','".$row['ORDERNO']."')></input></td>");
 
         echo("</tr>");
 		
@@ -85,6 +99,6 @@ $conn->close();
 ?> 
 
 
-
+</form>
 </body>
 </html>

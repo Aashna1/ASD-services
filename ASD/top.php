@@ -27,6 +27,10 @@
 			{
 				echo "<p align=right class='textdecoration'>Welcome, Er.".$_SESSION['userid']."<a href='logout.php'> Logout</a></p>";
 			}
+			elseif($_SESSION['userType'] == 'A')
+			{
+				echo "<p align=right class='textdecoration'>Welcome, Admin.".$_SESSION['userid']."<a href='logout.php'> Logout</a></p>";
+			}
 			else
 			{
 				echo "<p align=right class='textdecoration'>Welcome, ".$_SESSION['userid']."<a href='logout.php'> Logout</a></p>";
@@ -53,6 +57,11 @@
 			if($_SESSION['userType'] == 'E')
 			{
 				?><a href='myTask.php'>My Task |</a>
+			<?php
+			}
+			elseif($_SESSION['userType'] == 'A')
+			{
+				?><a href='admin_dashboard.php'>My Dashboard |</a>
 			<?php
 			}
 			else
